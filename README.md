@@ -22,7 +22,8 @@ Each agent feeds its output as context into the next — structured, sequential,
 
 ## Demo
 
-![Budget breakdown pie chart, savings allocation bar, debt comparison]
+<img width="1905" height="963" alt="Screenshot 2026-04-02 at 15 36 34" src="https://github.com/user-attachments/assets/4be88fdd-9254-464f-bbd2-c8973f963f9b" />
+
 
 > ⚠️ *Educational guidance only — not licensed financial advice. Consult a CFP for professional guidance.*
 
