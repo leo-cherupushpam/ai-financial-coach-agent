@@ -1,8 +1,9 @@
 # PRD: AI Financial Coach Agent
-**Version:** 1.0
-**Status:** Draft
+**Version:** 1.1
+**Status:** In Progress
 **Author:** Leo Cherupushpam (AI Product Manager)
 **Date:** 2026-04-02
+**Last Updated:** 2026-04-02 — switched model to OpenAI GPT-4o, added Desired Outcome section, updated roadmap status
 
 ---
 
@@ -61,6 +62,26 @@ A multi-agent AI system that functions as a personal financial coach:
 
 ---
 
+## 4. Desired Outcome
+
+> **"A user who felt overwhelmed by their finances leaves with a clear, prioritized list of 3–5 actions they can take this week — and actually takes at least one."**
+
+This product succeeds not when it generates analysis, but when it changes behavior. The output is not a dashboard — it is a decision. Every design choice should reduce the distance between "I see the data" and "I know what to do next."
+
+### Outcome vs. Output Distinction
+
+| Output (what we build) | Outcome (what we measure) |
+|---|---|
+| Budget breakdown chart | User identifies one category to cut |
+| Savings allocation plan | User sets up an auto-transfer |
+| Debt payoff comparison | User switches repayment strategy |
+| Synthesized action plan | User completes 1+ action within 7 days |
+
+### 6-Month Vision
+A user who runs this analysis monthly sees their budget health score improve by 15+ points, their savings rate increase by 5%+, and their debt balance decrease faster than their pre-AI trajectory. They trust the tool enough to return without being prompted.
+
+---
+
 ## 4. Success Metrics
 
 ### North Star Metric
@@ -78,16 +99,17 @@ Rationale: Behavior change is the product outcome — not just analysis generati
 | Return visit rate (D7, D30) | — | D7: 40%, D30: 25% | App analytics |
 | Net Promoter Score | — | >45 | In-app survey |
 | Hallucination / bad advice rate | — | <2% | QA sampling (25 sessions/week) |
-| Cost per session (API cost) | — | <$0.15 | Gemini usage logs |
+| Cost per session (API cost) | — | <$0.15 | OpenAI usage dashboard |
 
 ---
 
 ## 5. AI-Specific Design Decisions
 
-### 5.1 Model Choice: Gemini via Google ADK
-- **Why Gemini:** Native integration with ADK, strong function calling, competitive cost at scale
-- **Tradeoff accepted:** Vendor lock-in vs. faster time to market and tighter ADK integration
-- **Revisit trigger:** If Gemini pricing increases >30% or quality degrades on financial reasoning
+### 5.1 Model Choice: OpenAI GPT-4o
+- **Why GPT-4o:** Best structured output reliability on complex nested Pydantic schemas; `beta.chat.completions.parse()` gives native schema enforcement with zero framework overhead
+- **Why not Gemini/ADK:** Original repo used Google ADK v0.1.0 (unstable). Switched to raw OpenAI API — every design decision is visible in code, which is better for both explainability and portfolio interviews
+- **Tradeoff accepted:** Slightly higher cost per session vs. Gemini Flash; OpenAI vendor dependency
+- **Revisit trigger:** If GPT-4o cost exceeds $0.15/session at scale, evaluate Gemini 2.0 Flash or Claude Haiku
 
 ### 5.2 Multi-Agent vs. Single Agent
 - **Decision:** Multi-agent (3 specialized agents)
@@ -114,18 +136,22 @@ Rationale: Behavior change is the product outcome — not just analysis generati
 
 ## 6. Feature Roadmap
 
-### v1.0 — MVP (Build now)
-- [ ] CSV upload + manual expense entry
-- [ ] 3-agent parallel analysis (Budget, Savings, Debt)
-- [ ] Visual dashboard (charts for expense breakdown, debt timeline)
-- [ ] Prioritized action plan output
-- [ ] Disclaimer + data privacy notice
-- [ ] Basic QA checklist before each session
+### v1.0 — MVP ✅ Shipped
+- [x] CSV upload + manual expense entry
+- [x] 3-agent sequential analysis (Budget → Savings → Debt)
+- [x] Visual dashboard (expense pie, savings bar, debt comparison chart)
+- [x] Spending vs. benchmark chart (actual % vs. industry standard per category)
+- [x] 4th synthesis agent — prioritized action plan (Top 5 actions this week)
+- [x] Financial health banner (overall score + one-line summary)
+- [x] Sample data button (instant demo, no data entry required)
+- [x] Download report (full analysis as markdown)
+- [x] Disclaimer + data privacy notice on every output
 
-### v1.5 — Retention Layer
-- [ ] Session history (last 3 sessions stored locally)
-- [ ] Week-over-week comparison ("You spent 12% more on dining this month")
-- [ ] Action completion tracking ("Did you set up auto-transfer?")
+### v1.5 — Retention Layer (Next)
+- [ ] Session history (last 3 sessions stored locally in browser)
+- [ ] Progress tracker ("Your budget health score improved from 52 → 68 this month")
+- [ ] Action completion check-in ("Did you set up the auto-transfer? ✓/✗")
+- [ ] Week-over-week spending comparison via CSV diff
 
 ### v2.0 — Personalization
 - [ ] Persistent memory across sessions
