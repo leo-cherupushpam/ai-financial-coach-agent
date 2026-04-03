@@ -122,7 +122,3 @@ Reduces privacy/compliance complexity while validating the core value prop. Revi
 GPT-4o has stronger structured output reliability on complex nested Pydantic schemas. Also removes dependency on Google ADK v0.1.0 (unstable).
 
 ---
-
-## Inspiration
-
-Built on top of the [awesome-llm-apps](https://github.com/leo-cherupushpam/awesome-llm-apps) collection, rewritten with OpenAI API and product management documentation.
