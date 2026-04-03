@@ -454,6 +454,8 @@ if "current_session_id" not in st.session_state:
     st.session_state.current_session_id = None
 if "sample_loaded" not in st.session_state:
     st.session_state.sample_loaded = False
+if "analysis_results" not in st.session_state:
+    st.session_state.analysis_results = None  # Stores (financial_data, budget, savings, debt, plan)
 
 # Tab navigation
 tab1, tab2, tab3 = st.tabs(["📊 Analyze", "📈 History & Progress", "✅ Track Actions"])
@@ -582,6 +584,21 @@ with tab1:
         }
         session_id = SessionManager.save_session(analysis)
         st.session_state.current_session_id = session_id
+
+        # Store in session state for persistence across tabs
+        st.session_state.analysis_results = analysis
+
+        st.success("✅ Analysis complete!")
+
+    # Display results if they exist in session state (shows across all tabs)
+    if st.session_state.analysis_results:
+        financial_data = st.session_state.analysis_results["financial_data"]
+        budget = st.session_state.analysis_results["budget"]
+        savings = st.session_state.analysis_results["savings"]
+        debt = st.session_state.analysis_results["debt"]
+        plan = st.session_state.analysis_results["plan"]
+
+        st.divider()
 
         # Health banner
         health_config = {

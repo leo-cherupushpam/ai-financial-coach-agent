@@ -1,5 +1,263 @@
 [
   {
+    "id": "2026-04-02T18:31:51.144269",
+    "date": "April 02, 2026 at 06:31 PM",
+    "timestamp": "2026-04-02T18:31:51.144269",
+    "financial_data": {
+      "income": 5000.0,
+      "expenses": {
+        "Housing / Rent": 1800.0,
+        "Food & Groceries": 650.0,
+        "Transportation": 400.0,
+        "Utilities": 150.0,
+        "Healthcare": 100.0,
+        "Entertainment": 320.0,
+        "Clothing": 80.0,
+        "Subscriptions": 120.0,
+        "Other": 180.0
+      },
+      "dependents": 1,
+      "existing_savings": 2000.0,
+      "debts": [
+        {
+          "name": "Credit Card",
+          "balance": 4500,
+          "rate": 22.99,
+          "min_payment": 90
+        },
+        {
+          "name": "Student Loan",
+          "balance": 18000,
+          "rate": 5.5,
+          "min_payment": 200
+        },
+        {
+          "name": "Car Loan",
+          "balance": 8000,
+          "rate": 7.0,
+          "min_payment": 175
+        }
+      ]
+    },
+    "budget": {
+      "total_income": 5000.0,
+      "total_expenses": 3800.0,
+      "surplus_deficit": 1200.0,
+      "savings_potential": 1200.0,
+      "spending_categories": [
+        {
+          "category": "Housing / Rent",
+          "amount": 1800.0,
+          "percentage_of_income": 36.0,
+          "benchmark_percentage": 30.0,
+          "status": "Over Benchmark",
+          "recommendation": "Consider downsizing or negotiating rent."
+        },
+        {
+          "category": "Food & Groceries",
+          "amount": 650.0,
+          "percentage_of_income": 13.0,
+          "benchmark_percentage": 15.0,
+          "status": "Within Benchmark",
+          "recommendation": "Maintain current spending, look for coupons or discounts."
+        },
+        {
+          "category": "Transportation",
+          "amount": 400.0,
+          "percentage_of_income": 8.0,
+          "benchmark_percentage": 10.0,
+          "status": "Within Benchmark",
+          "recommendation": "Monitor fuel efficiency or explore carpooling to reduce further."
+        },
+        {
+          "category": "Utilities",
+          "amount": 150.0,
+          "percentage_of_income": 3.0,
+          "benchmark_percentage": 5.0,
+          "status": "Within Benchmark",
+          "recommendation": "Ensure energy efficiency to maintain low costs."
+        },
+        {
+          "category": "Healthcare",
+          "amount": 100.0,
+          "percentage_of_income": 2.0,
+          "benchmark_percentage": 5.0,
+          "status": "Within Benchmark",
+          "recommendation": "Maintain current spending, explore health savings where possible."
+        },
+        {
+          "category": "Entertainment",
+          "amount": 320.0,
+          "percentage_of_income": 6.4,
+          "benchmark_percentage": 5.0,
+          "status": "Over Benchmark",
+          "recommendation": "Review and reduce discretionary entertainment spend."
+        },
+        {
+          "category": "Clothing",
+          "amount": 80.0,
+          "percentage_of_income": 1.6,
+          "benchmark_percentage": 3.0,
+          "status": "Within Benchmark",
+          "recommendation": "Consider occasional sales or thrift shopping."
+        },
+        {
+          "category": "Subscriptions",
+          "amount": 120.0,
+          "percentage_of_income": 2.4,
+          "benchmark_percentage": 3.0,
+          "status": "Within Benchmark",
+          "recommendation": "Evaluate necessity of current subscriptions."
+        },
+        {
+          "category": "Other",
+          "amount": 180.0,
+          "percentage_of_income": 3.6,
+          "benchmark_percentage": 5.0,
+          "status": "Within Benchmark",
+          "recommendation": "Monitor miscellaneous expenses closely."
+        }
+      ],
+      "top_reduction_opportunities": [
+        "Reduce Housing / Rent expenses by negotiating lease or relocating to a lower-cost area.",
+        "Limit Entertainment spending by choosing less costly activities or reducing frequency.",
+        "Trim or eliminate unnecessary Subscriptions after evaluating monthly necessity."
+      ],
+      "budget_health_score": 85,
+      "health_score_rationale": "The budget is overall healthy with a 24% savings rate potential, which is above the benchmark. Key areas for improvement include reducing rent and entertainment spending."
+    },
+    "savings": {
+      "emergency_fund_target": 11400.0,
+      "emergency_fund_months": 3,
+      "months_to_emergency_fund": 8,
+      "monthly_savings_amount": 1200.0,
+      "savings_rate_percentage": 24.0,
+      "savings_allocation": [
+        {
+          "bucket": "Emergency Fund",
+          "monthly_amount": 1000.0,
+          "priority": 1,
+          "rationale": "With a dependent, securing financial stability is crucial. Prioritize building an emergency fund covering 3 months ($11,400) of expenses as quickly as possible."
+        },
+        {
+          "bucket": "Retirement",
+          "monthly_amount": 100.0,
+          "priority": 2,
+          "rationale": "Contributing to retirement savings ensures long-term financial security. Allocating $100 per month builds consistent habits without significantly impacting short-term goals."
+        },
+        {
+          "bucket": "Short-Term Goals (e.g., vacation, education fund)",
+          "monthly_amount": 100.0,
+          "priority": 3,
+          "rationale": "Setting aside funds for short-term goals helps in achieving personal milestones and provides flexibility. $100 monthly allocation keeps motivation without diverting focus from critical needs."
+        }
+      ],
+      "automation_tips": [
+        "Set up an automatic transfer of $1,000 to a high-yield savings account dedicated to the emergency fund on the same day or soon after payday to ensure consistent growth.",
+        "Utilize your bank\u2019s automation features to transfer $100 monthly to an IRA or a similar retirement account, taking advantage of compound interest over time.",
+        "Create a separate savings account for short-term goals and automate a $100 transfer into this account each month, helping in planning for specific goals like vacations or an education fund.",
+        "Use budgeting apps to set savings goals and track progress automatically, ensuring you stay aligned with your financial plans and adjust if necessary."
+      ]
+    },
+    "debt": {
+      "total_debt": 30500.0,
+      "avalanche_order": [
+        {
+          "name": "Credit Card",
+          "balance": 4500.0,
+          "interest_rate": 22.99,
+          "monthly_payment": 90.0
+        },
+        {
+          "name": "Car Loan",
+          "balance": 8000.0,
+          "interest_rate": 7.0,
+          "monthly_payment": 175.0
+        },
+        {
+          "name": "Student Loan",
+          "balance": 18000.0,
+          "interest_rate": 5.5,
+          "monthly_payment": 200.0
+        }
+      ],
+      "snowball_order": [
+        {
+          "name": "Credit Card",
+          "balance": 4500.0,
+          "interest_rate": 22.99,
+          "monthly_payment": 90.0
+        },
+        {
+          "name": "Car Loan",
+          "balance": 8000.0,
+          "interest_rate": 7.0,
+          "monthly_payment": 175.0
+        },
+        {
+          "name": "Student Loan",
+          "balance": 18000.0,
+          "interest_rate": 5.5,
+          "monthly_payment": 200.0
+        }
+      ],
+      "recommended_method": "Avalanche",
+      "recommended_reason": "The avalanche method results in lower total interest paid due to prioritizing the highest interest rate debt first.",
+      "months_to_debt_free_avalanche": 19,
+      "months_to_debt_free_snowball": 21,
+      "total_interest_avalanche": 1878.79,
+      "total_interest_snowball": 1985.75,
+      "interest_savings_with_recommended": 106.96
+    },
+    "plan": {
+      "overall_health": "good",
+      "one_line_summary": "Solid financial health with room to optimize debt repayment.",
+      "top_actions": [
+        {
+          "priority": 1,
+          "domain": "Debt Management",
+          "action": "Accelerate debt payments using surplus to reduce total interest paid.",
+          "impact": "High",
+          "effort": "60 minutes",
+          "deadline": "1 month"
+        },
+        {
+          "priority": 2,
+          "domain": "Budget Management",
+          "action": "Review budget to identify further savings opportunities.",
+          "impact": "Medium",
+          "effort": "90 minutes",
+          "deadline": "1 month"
+        },
+        {
+          "priority": 3,
+          "domain": "Emergency Fund",
+          "action": "Contribute an additional $200 monthly to build a stronger emergency fund.",
+          "impact": "Medium",
+          "effort": "15 minutes",
+          "deadline": "1 week"
+        },
+        {
+          "priority": 4,
+          "domain": "Financial Education",
+          "action": "Research methods to enhance saving strategies through financial education resources.",
+          "impact": "Medium",
+          "effort": "120 minutes",
+          "deadline": "3 months"
+        },
+        {
+          "priority": 5,
+          "domain": "Debt Management",
+          "action": "Review and adjust the avalanche payment strategy monthly.",
+          "impact": "Medium",
+          "effort": "30 minutes",
+          "deadline": "1 month"
+        }
+      ],
+      "one_year_outlook": "If followed, debt will be reduced, savings will increase, and financial stability will improve significantly."
+    }
+  },
+  {
     "id": "2026-04-02T18:19:35.586314",
     "date": "April 02, 2026 at 06:19 PM",
     "timestamp": "2026-04-02T18:19:35.586314",
