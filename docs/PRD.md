@@ -62,13 +62,15 @@ A multi-agent AI system that functions as a personal financial coach:
 
 ---
 
-## 4. Desired Outcome
+## 4. Project Outcomes
+
+### 4A. Product Outcome (User Behavior Change)
 
 > **"A user who felt overwhelmed by their finances leaves with a clear, prioritized list of 3–5 actions they can take this week — and actually takes at least one."**
 
-This product succeeds not when it generates analysis, but when it changes behavior. The output is not a dashboard — it is a decision. Every design choice should reduce the distance between "I see the data" and "I know what to do next."
+This product succeeds not when it generates analysis, but when it **changes behavior**. The output is not a dashboard — it is a decision. Every design choice should reduce the distance between "I see the data" and "I know what to do next."
 
-### Outcome vs. Output Distinction
+#### Outcome vs. Output Distinction
 
 | Output (what we build) | Outcome (what we measure) |
 |---|---|
@@ -77,8 +79,34 @@ This product succeeds not when it generates analysis, but when it changes behavi
 | Debt payoff comparison | User switches repayment strategy |
 | Synthesized action plan | User completes 1+ action within 7 days |
 
-### 6-Month Vision
+#### 6-Month Vision
 A user who runs this analysis monthly sees their budget health score improve by 15+ points, their savings rate increase by 5%+, and their debt balance decrease faster than their pre-AI trajectory. They trust the tool enough to return without being prompted.
+
+---
+
+### 4B. Portfolio Outcome (What This Project Demonstrates)
+
+This project was built to showcase AI Product Management skills. Success means:
+
+| Dimension | Demonstrates |
+|---|---|
+| **Problem Discovery** | Can identify real, sizable problems from research (67% financial literacy gap, $150–500/hr CFP cost) |
+| **User-Centric Design** | Built 2 personas with JTBD, not just feature lists |
+| **Metrics-First Thinking** | North Star metric is behavior change, not engagement or vanity metrics |
+| **AI-Specific Judgment** | Explained model choice (GPT-4o), multi-agent tradeoffs, hallucination mitigation, cost per session |
+| **Shipping & Iteration** | v1.0 → v1.5 progression; each version tests a hypothesis |
+| **Retention Strategy** | Session history + progress tracking + action completion = measurable retention driver |
+| **Technical + Product** | Code is readable, decisions are documented, PRD is the artifact (not just the app) |
+
+#### What We're NOT Doing
+- Building without a problem statement
+- Vanity metrics (DAU, MAU, session count)
+- Promising "AI will fix everything"
+- Vague feature lists ("add memory", "improve UX")
+- One-shot building without iteration
+
+#### Success = Portfolio Reviewer Says
+> *"This person understands: real problems, user behavior, how to measure product impact, AI tradeoffs, AND how to ship. They think like a PM, not an engineer."*
 
 ---
 
@@ -237,3 +265,56 @@ H: Users with explicit goals (e.g., "Hit 70 budget score by June") complete acti
 - **Iteration plan**: v2.0 adds personalization (goals, email, memory)
 
 The PRD + implementation shows both shipping speed and product thinking.
+
+---
+
+## 12. How to Talk About This Project (Portfolio Narrative)
+
+### The Elevator Pitch (30 seconds)
+> *"I built an AI financial coach that turns transaction data into prioritized actions. It's not just analysis — it's behavior change. I defined a north star metric (% completing 1+ action in 7 days), shipped v1.0 with 4 specialized agents, then v1.5 added session history + progress tracking to drive retention. The PR shows problem discovery, metrics thinking, and AI tradeoffs."*
+
+### In a PM Interview (3–5 minutes)
+1. **Problem:** "67% of Americans fail basic financial literacy. CFPs cost $150–500/hr, so access is the constraint."
+2. **Solution:** "Multi-agent system — Budget, Savings, Debt agents each handle their domain, then synthesis agent prioritizes top 5 actions."
+3. **What makes it product-focused:**
+   - North star is behavior change (action completion), not engagement
+   - v1.5 tests a hypothesis: progress visibility drives retention
+   - Used session history + comparison UI to surface delta (score ↑10 points, expenses ↓5%)
+4. **What would come next:** "v2.0 adds goal-setting. My hypothesis: users with explicit goals complete 3x more actions. We'd A/B test."
+
+### In a Technical Interview (for PM + eng background)
+- **Model choice:** "Chose GPT-4o for structured output reliability. Pydantic schemas give native enforcement."
+- **Architecture:** "Agents are sequential functions, not a framework. Every decision is transparent in the code."
+- **Why not build it differently:** "Could've used LangChain, but wanted every design choice visible. Better for explainability and interviews."
+
+### What NOT to Say
+- ❌ "I built an AI financial advisor" (too vague, sounds like all LLM apps)
+- ❌ "It uses 4 agents so it's sophisticated" (so what?)
+- ❌ "The model is GPT-4o so it's better" (better at what?)
+- ✅ Say why your choices matter for the user outcome
+
+### Red Flags to Avoid
+- Don't claim the app "solves" financial literacy (it doesn't — it nudges behavior)
+- Don't oversell AI as the differentiator (the retention strategy + metrics thinking is)
+- Don't cite metrics you didn't actually measure (e.g., "users saved 40% on debt" — we haven't measured this in prod)
+
+---
+
+## 13. Success Criteria for This Portfolio Project
+
+### Before You Show This to Employers, Verify:
+- [ ] README is polished and tells a story (problem → solution → roadmap)
+- [ ] PRD demonstrates metrics-first thinking (north star clearly defined)
+- [ ] Code is readable — multi-agent pattern is obvious
+- [ ] Architecture decisions document tradeoffs (not just "why we chose X")
+- [ ] Session history works (users can compare analyses and see progress)
+- [ ] Action completion tracker is functional (checkbox → persistence)
+- [ ] Repo has >15 commits showing iteration (not one big dump)
+- [ ] You can explain: why these 3 agents, why GPT-4o, why session-only memory in v1
+
+### Portfolio Win Conditions:
+1. **Interviewer asks:** "Walk me through your north star metric" → You explain clearly
+2. **Interviewer asks:** "Why did you build this and not X?" → You cite the problem + user outcomes
+3. **Interviewer looks at code:** → Says "clean, I understand the architecture"
+4. **Interviewer sees PRD:** → Says "this is PM thinking, not just engineering"
+5. **You get follow-up question:** "What would you do differently?" → You discuss v2.0 hypotheses
