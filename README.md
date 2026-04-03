@@ -24,6 +24,9 @@ Each agent feeds its output as context into the next — structured, sequential,
 
 <img width="1905" height="963" alt="Screenshot 2026-04-02 at 15 36 34" src="https://github.com/user-attachments/assets/4be88fdd-9254-464f-bbd2-c8973f963f9b" />
 
+<img width="1907" height="953" alt="Screenshot 2026-04-02 at 18 09 28" src="https://github.com/user-attachments/assets/a1387e2f-03ee-479e-99eb-db8f7a92105c" />
+
+
 
 > ⚠️ *Educational guidance only — not licensed financial advice. Consult a CFP for professional guidance.*
 
