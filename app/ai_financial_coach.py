@@ -611,22 +611,6 @@ with tab1:
 
         st.divider()
 
-        # Action plan
-        st.header("🎯 Your Action Plan")
-        domain_colors = {"budget": "#e74c3c", "savings": "#2ecc71", "debt": "#3498db"}
-
-        for item in plan.top_actions:
-            color = domain_colors.get(item.domain.lower(), "#95a5a6")
-            with st.container(border=True):
-                col_num, col_content = st.columns([0.08, 0.92])
-                with col_num:
-                    st.markdown(f"<h2 style='color:{color};margin:0;'>#{item.priority}</h2>", unsafe_allow_html=True)
-                with col_content:
-                    st.markdown(f"**{item.action}**")
-                    st.caption(f"📈 {item.impact}  ·  ⏱️ {item.effort}  ·  📅 {item.deadline.title()}")
-
-        st.divider()
-
         # Budget results
         st.header("💸 Budget Analysis")
         c1, c2, c3, c4 = st.columns(4)
@@ -705,6 +689,25 @@ with tab1:
 
             rec_emoji = "🏔️" if debt.recommended_method.lower() == "avalanche" else "⛄"
             st.info(f"**{rec_emoji} Recommended: {debt.recommended_method.title()}**\n{debt.recommended_reason}")
+
+        st.divider()
+
+        # Action plan (moved to bottom for better UX)
+        st.header("🎯 Your Prioritized Action Plan")
+        st.caption("Start with these 5 actions this week to improve your financial health.")
+
+        domain_colors = {"budget": "#e74c3c", "savings": "#2ecc71", "debt": "#3498db"}
+
+        for item in plan.top_actions:
+            color = domain_colors.get(item.domain.lower(), "#95a5a6")
+            with st.container(border=True):
+                col_num, col_content = st.columns([0.08, 0.92])
+                with col_num:
+                    st.markdown(f"<h2 style='color:{color};margin:0;'>#{item.priority}</h2>", unsafe_allow_html=True)
+                with col_content:
+                    st.markdown(f"**{item.action}**")
+                    st.caption(f"📈 {item.impact}  ·  ⏱️ {item.effort}  ·  📅 {item.deadline.title()}")
+                    st.markdown(f"<span style='background:{color}22;color:{color};padding:2px 8px;border-radius:12px;font-size:0.75rem;font-weight:600;'>{item.domain.upper()}</span>", unsafe_allow_html=True)
 
         st.divider()
         st.caption("⚠️ Educational guidance only — not licensed financial advice.")
