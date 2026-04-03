@@ -1,9 +1,9 @@
 # PRD: AI Financial Coach Agent
-**Version:** 1.1
-**Status:** In Progress
+**Version:** 1.5
+**Status:** In Progress (v1.0 + v1.5 shipped, v2.0 planned)
 **Author:** Leo Cherupushpam (AI Product Manager)
 **Date:** 2026-04-02
-**Last Updated:** 2026-04-02 — switched model to OpenAI GPT-4o, added Desired Outcome section, updated roadmap status
+**Last Updated:** 2026-04-02 — shipped v1.5 (session history, progress tracking, action completion tracking)
 
 ---
 
@@ -147,11 +147,13 @@ Rationale: Behavior change is the product outcome — not just analysis generati
 - [x] Download report (full analysis as markdown)
 - [x] Disclaimer + data privacy notice on every output
 
-### v1.5 — Retention Layer (Next)
-- [ ] Session history (last 3 sessions stored locally in browser)
-- [ ] Progress tracker ("Your budget health score improved from 52 → 68 this month")
-- [ ] Action completion check-in ("Did you set up the auto-transfer? ✓/✗")
-- [ ] Week-over-week spending comparison via CSV diff
+### v1.5 — Retention Layer ✅ Shipped
+- [x] **Session history** — stores last 3 analyses as JSON locally
+- [x] **Progress tracker** — compare any 2 sessions, see deltas (budget score, expenses, surplus, savings rate)
+- [x] **Action completion tracking** — checkboxes to mark top-5 actions as done, completion % meter
+- [x] **Tab-based navigation** — Analyze | History & Progress | Track Actions
+- [x] **SessionManager class** — handles save/load of analyses
+- [x] **ActionTracker class** — manages action completion state
 
 ### v2.0 — Personalization
 - [ ] Persistent memory across sessions
@@ -173,19 +175,65 @@ Rationale: Behavior change is the product outcome — not just analysis generati
 
 ---
 
-## 8. Open Questions (for next user research session)
+## 8. v1.5 Implementation Summary
+
+### What We Built
+**Tab 1: Analyze** — 4-agent analysis (unchanged from v1.0)
+**Tab 2: History & Progress** — View past analyses, compare any 2 sessions, see deltas
+**Tab 3: Track Actions** — Checkbox list of top-5 actions, completion %, completion badge
+
+### Technical Details
+- `SessionManager` class: Save/load analyses to `sessions.json`, keep last 3 only
+- `ActionTracker` class: Checkbox state persisted to `actions_tracking.json`
+- No backend required — everything local & privacy-preserving
+- Estimated cost to run: <$0.01/session (4 GPT-4o calls)
+
+### Hypothesis Being Tested
+**H:** Users who see progress (budget score delta, expense delta) return at 2x the rate compared to one-time users.
+
+**How we'll measure:**
+- Retention rate (D7, D30) for sessions with visible progress (score ↑ 10+ points)
+- vs. sessions with flat/negative progress
+- Action completion rate as proxy for engagement
+
+---
+
+## 9. Open Questions (for next user research session)
 
 1. Do users trust AI for financial advice, or do they need a human "in the loop"?
 2. What's the biggest drop-off point — data upload, waiting for analysis, or reading results?
 3. Would users pay for this? What's the WTP for Steph vs. Dan?
 4. Is the 3-agent approach perceivably better than a single agent to users?
+5. (Post v1.5) Does seeing progress increase re-engagement? What's the delta in D7/D30 retention?
 
 ---
 
-## 9. Go-to-Market Framing (for Portfolio)
+## 10. v2.0 Roadmap — Personalization
+
+### Features
+- [ ] Persistent memory across browser sessions (localStorage)
+- [ ] Goal-setting UI ("Save $500/mo for emergency fund by EOY")
+- [ ] Progress visualization (sparkline showing 90-day trend in budget score)
+- [ ] Email export of completion status + next month reminders
+- [ ] Model experimentation — A/B test Claude vs. GPT-4o on advice quality
+
+### Hypothesis
+H: Users with explicit goals (e.g., "Hit 70 budget score by June") complete actions at 3x the rate of users without goals.
+
+---
+
+## 11. Go-to-Market Framing (for Portfolio)
 
 **Positioning:** "The first AI coach that turns your transaction data into a prioritized financial action plan — in 2 minutes, not 2 hours."
 
-**Target channel:** Personal finance communities (r/personalfinance, financial literacy TikTok)
+**Target channel:** Personal finance communities (r/personalfinance, Bogleheads, YNAB subreddit)
 
-**Portfolio story:** Show the progression from problem discovery → architecture decisions → metrics → iteration plan. The PRD IS the artifact — not just the code.
+**Portfolio story:**
+- **Problem discovery**: 67% of Americans fail basic financial literacy; CFPs cost $150–500/hr
+- **Solution design**: 4-agent architecture (Budget, Savings, Debt, Synthesis)
+- **v1.0**: Core analysis engine + synthesis + dashboards
+- **v1.5**: Retention layer (session history, progress tracking, action completion)
+- **Metrics first**: North star is behavior change (% completing 1+ action in 7 days), not just engagement
+- **Iteration plan**: v2.0 adds personalization (goals, email, memory)
+
+The PRD + implementation shows both shipping speed and product thinking.
